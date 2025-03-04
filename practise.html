@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+  </head>
+  <body>
+    <h1>Welcome to credoz</h1>
+    <form>
+      <label>UserName</label>
+      <input
+        type="text"
+        placeholder="Enter Username"
+        required
+        minlength="5"
+        maxlength="10"
+      />
+      <br />
+      <label>Password</label>
+      <input
+        type="password"
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$
+      "
+      />
+      <br />
+      <label for="employee">Employee id</label>
+      <input type="number" min="1000" max="99999" id="employee" />
+      <br />
+      <label>Gender</label>
+      <input id="male" type="radio" name="gender" value="male" />
+      <label for="male">Male</label>
+      <input id="female" type="radio" name="gender" value="female" />
+      <label for="female">Female</label>
+      <br />
+      <label>Select</label>
+      <select id="fruits" name="fruits">
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="cherry">Cherry</option>
+        <option value="date">Date</option>
+      </select>
+      <br />
+      <input type="checkbox" id="terms" value="true" /><label for="terms"
+        >Terms &b condition</label
+      >
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
