@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Float session</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css"
+      integrity="sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <style>
+      .container {
+        border: 1px solid tomato;
+        padding: 10px;
+        margin: 10px;
+      }
+      img {
+        float: left;
+      }
+      .link-container {
+        padding: 5px;
+        background-color: tomato;
+        list-style-type: none;
+        box-sizing: border-box;
+      }
+
+      .link {
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        display: block;
+      }
+      .active {
+        display: inline-block;
+        width: 100%;
+        background-color: lightgreen;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .link-container-horizontal {
+        background-color: lightsalmon;
+        padding: 10px;
+        list-style-type: none;
+      }
+      .link-container-horizontal li {
+        display: inline-block;
+      }
+      .link-flat {
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+      }
+      .active-color {
+        background-color: coral;
+      }
+      .float-right {
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul class="link-container-horizontal">
+        <li>
+          <a class="link-flat" href="#"
+            ><span class="material-symbols-outlined"> home </span>Home</a
+          >
+        </li>
+        <li>
+          <a class="link-flat router" href="#"
+            ><span class="material-symbols-outlined"> swipe_right_alt </span
+            >Insert</a
+          >
+        </li>
+        <li><a class="link-flat active-color" href="#">Draw</a></li>
+        <li><a class="link-flat" href="#">View</a></li>
+      </ul>
+      <div><a class="link-flat" href="#">Logout</a></div>
+    </nav>
+    <nav>
+      <ul class="link-container">
+        <li><a class="link" href="#">Home</a></li>
+        <li><a class="link active router" href="#">Insert</a></li>
+        <li><a class="link" href="#">Draw</a></li>
+        <li><a class="link" href="#">View</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <img src="./assets/smiley.png" alt="logo" height="50" width="50" />
+      <p class="text">
+        Google LLC is an American multinational corporation and technology
+        company focusing on online advertising, search engine technology, cloud
+        computing, computer software, quantum computing, e-commerce, …
+      </p>
+    </div>
+  </body>
+</html>
