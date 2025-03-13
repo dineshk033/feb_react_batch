@@ -1,0 +1,17 @@
+.logo {
+    height: 2rem;
+    width: 2rem;
+    font-size: 2rem !important;
+    color: dodgerblue;
+  }
+   
+  .active {
+    color: skyblue;
+  }
+   
+  .navbar-nav .nav-item {
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+   
+   
