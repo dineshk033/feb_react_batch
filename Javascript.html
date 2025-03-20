@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+  </head>
+  <body>
+    <script>
+      /*
+      var - functiom scope
+      let - block scope
+        */
+      let name = "hellp";
+      if (true) {
+        // const a = 10;
+        var a = null;
+        let name = 12;
+        name = "hellp";
+        name = true;
+        console.log(a);
+      }
+      /***
+       *Primitive data type (call by value)
+       * String
+       * Number
+       * boolean
+       * null
+       * undefined
+       *
+       * non-primitive (call by reference)
+       * object
+       * array
+       * */
+      console.log("outer block", a);
+      // document.write("hello")
+      var i, n, a, b, res;
+      n = 10;
+      a = 0;
+      b = 1;
+      document.write("0 1 ");
+      for (i = 2; i <= n; i++) {
+        res = a + b;
+        document.write(res + " ");
+        a = b;
+        b = res;
+      }
+    </script>
+    <h1>welcome to JS</h1>
+  </body>
+</html>
