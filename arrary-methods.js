@@ -39,3 +39,6 @@ console.log([...fruits, ...emp]);
 console.log(fruits.concat(emp));
 console.log(fruits.join("joining with"));
 console.log(fruits.toString());
+//Reference
+//https://aalonso.dev/blog/2022/javascript-array-methods-explained-with-examples
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
