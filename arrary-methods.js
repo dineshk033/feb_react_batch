@@ -83,6 +83,19 @@ const result = fruits.filter(function (fruit) {
 const ar = fruits.filter((item) => {
   return item !== "🍋";
 });
-console.log(result, ar);
+console.log(result, ar, months);
 //1,2,3,4,...10
 //return 1,2,3,4,5
+console.log(months.find((item) => item === "Dec"));
+console.log(months.find((item) => item === "April"));
+console.log(months.includes("April"));
+console.log(months.findIndex((item) => item === "23April"));
+
+for (let i = 0; i < months.length; i++) {
+  console.log(months[i]);
+}
+months.forEach((item) => {
+  console.log(item);
+});
+const resMap = months.map((value, idx) => `${value} indx is ${idx}`);
+// console.log(resMap);
