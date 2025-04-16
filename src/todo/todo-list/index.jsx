@@ -1,7 +1,7 @@
-import { TODOLISTVALUES } from "../../constant/todolistValues";
 import TodoItem from "../todo-item";
 
-function TodoList() {
+function TodoList(props) {
+  console.log(props);
   return (
     <div className="row ">
       <div className="col-md-6 card p-3">
@@ -9,8 +9,12 @@ function TodoList() {
         <TodoItem {...TODOLISTVALUES[1]} />
         <TodoItem {...TODOLISTVALUES[2]} />
         <TodoItem {...item} /> */}
-        {TODOLISTVALUES.map((item) => (
-          <TodoItem key={item.name} {...item} />
+        {props.todoData.map((item) => (
+          <TodoItem
+            key={item.name}
+            {...item}
+            handleDelete={props.handleDelete}
+          />
         ))}
       </div>
     </div>

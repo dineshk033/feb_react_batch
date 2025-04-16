@@ -1,6 +1,6 @@
 import CheckStatus from "./check-status";
 
-function TodoItem({ name, completed }) {
+function TodoItem({ name, completed, handleDelete }) {
   //   const checkStatus = (completed) => {
   //     if (completed) {
   //       return <label className="text-decoration-line-through">{name}</label>;
@@ -22,7 +22,12 @@ function TodoItem({ name, completed }) {
           <label>some</label>
         )} */}
       </div>
-      <button className="btn btn-sm btn-danger">Delete</button>
+      <button
+        className="btn btn-sm btn-danger"
+        onClick={() => handleDelete(name)}
+      >
+        Delete
+      </button>
     </div>
   );
 }
