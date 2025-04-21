@@ -6,5 +6,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import TimerApp from "./timer-app/index.jsx";
 import App from "./App.jsx";
 import BookLibrary from "./book-library/index.jsx";
+import SignupForm from "./signup/index.jsx";
 
-createRoot(document.getElementById("root")).render(<BookLibrary />);
+createRoot(document.getElementById("root")).render(<SignupForm />);
