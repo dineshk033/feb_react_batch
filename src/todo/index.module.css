@@ -1,3 +1,7 @@
 .todo-danger {
   background-color: tomato;
 }
+
+.todoTextPrimary {
+  color: aqua;
+}

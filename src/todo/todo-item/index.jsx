@@ -23,7 +23,7 @@ function TodoItem({ name, completed, handleDelete }) {
         )} */}
       </div>
       <button
-        className="btn btn-sm btn-danger"
+        className="btn btn-sm todo-danger"
         onClick={() => handleDelete(name)}
       >
         Delete

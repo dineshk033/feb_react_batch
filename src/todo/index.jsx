@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import TodoList from "./todo-list";
 import { TODOLISTVALUES } from "../constant/todolistValues";
+import styles from "./index.module.css";
 // const person = { name: "mr.", age: 234, dob: "@#3" };
 function Todo() {
   const [todoData, setTodoData] = useState([]);
@@ -20,7 +21,7 @@ function Todo() {
   };
   return (
     <div className="container">
-      <h1 className="fs-2 text-primary">Todo Application</h1>
+      <h1 className={`fs-2 ${styles.todoTextPrimary}`}>Todo Application</h1>
       <TodoList todoData={todoData} handleDelete={handleDelete} />
     </div>
   );

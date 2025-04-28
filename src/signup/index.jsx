@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { validationForm } from "./utils";
-const errorMSG = {
+const defaultError = {
   firstname: "",
   lastname: "",
   password: "",
@@ -29,7 +29,7 @@ const SignupForm = () => {
     skills: ["vue", "react"],
     degree: "",
   });
-  const [error, setError] = useState(errorMSG);
+  const [error, setError] = useState(defaultError);
   const handleInputChange = (event) => {
     const key = event.target.id;
     const value = event.target.value;
@@ -66,7 +66,7 @@ const SignupForm = () => {
     event.preventDefault();
     console.log(formData);
     const errormsg = validationForm(formData);
-    setError({ ...errorMSG, ...errormsg });
+    setError({ ...defaultError, ...errormsg });
   };
   console.log(error);
 

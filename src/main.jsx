@@ -7,5 +7,9 @@ import TimerApp from "./timer-app/index.jsx";
 import App from "./App.jsx";
 import BookLibrary from "./book-library/index.jsx";
 import SignupForm from "./signup/index.jsx";
+import Login from "./login/index.jsx";
+import FileUpload from "./file-upload/index.jsx";
+import Todo from "./todo/index.jsx";
+import UserList from "./user-list/index.jsx";
 
-createRoot(document.getElementById("root")).render(<SignupForm />);
+createRoot(document.getElementById("root")).render(<UserList />);
