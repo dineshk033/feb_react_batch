@@ -11,5 +11,6 @@ import Login from "./login/index.jsx";
 import FileUpload from "./file-upload/index.jsx";
 import Todo from "./todo/index.jsx";
 import UserList from "./user-list/index.jsx";
+import Blog from "./blog/index.jsx";
 
-createRoot(document.getElementById("root")).render(<UserList />);
+createRoot(document.getElementById("root")).render(<Blog />);
