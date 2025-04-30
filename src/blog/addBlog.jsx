@@ -11,7 +11,8 @@ export default function AddBlog() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(form);
-    AxiosInstance.post("/posts", form).then((data) => {
+    const data = { title: form.title, userId: 5 };
+    AxiosInstance.post("/posts/add", data).then(() => {
       setForm({ title: "", comment: "" });
     });
   };
