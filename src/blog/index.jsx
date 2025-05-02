@@ -1,38 +1,28 @@
-import React, { useEffect, useState } from "react";
-import AddBlog from "./addBlog";
-import { RenderBlog } from "./list-blog";
-import { AxiosInstance } from "./axios";
+import React from "react";
 import HeaderNav from "./header";
+import HomeBlog from "./home";
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
+import { RenderBlog } from "./list-blog";
+import AddBlog from "./addBlog";
+import NotFound from "./notfound";
+import Login from "./login";
 
 export default function Blog() {
-  const [list, setList] = useState([]);
-  const fetchList = async () => {
-    const res = await AxiosInstance.get("/posts/user/5");
-    setList(res.data.posts);
-  };
-  useEffect(() => {
-    fetchList();
-  }, []);
-
-  const handleDelete = (id) => {
-    AxiosInstance.delete(`/posts/${id}`).then(() => {
-      alert("deleted succesfly");
-    });
-  };
   return (
     <>
-      <HeaderNav />
+      <HeaderNav>
+        <div className="text-primary">Blogger</div>
+      </HeaderNav>
       <div className="container">
-        <div className="row">
-          <div className="col-6">
-            <h2 className="my-3">Blog add</h2>
-            <AddBlog />
-          </div>
-          <div className="col-6">
-            <h2 className="my-3">Blog List</h2>
-            <RenderBlog list={list} handleDelete={handleDelete} />
-          </div>
-        </div>
+        <Routes>
+          <Route path="/" Component={HomeBlog} />
+          <Route path="/list" Component={AddBlog} />
+          <Route path="/add-blog" Component={AddBlog} />
+          <Route path="/login" Component={Login} />
+          {/* <Route path="*" Component={<Navigate to="/" replace />} /> */}
+          <Route path="*" Component={NotFound} />
+        </Routes>
+        <Outlet />
       </div>
     </>
   );
