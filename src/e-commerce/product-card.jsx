@@ -1,11 +1,13 @@
 import React from "react";
 import Rating from "./ratings";
+import { Link } from "react-router-dom";
 
 export default function ProductCard({
   title,
   price,
   discountPercentage,
   rating,
+  id,
   thumbnail,
 }) {
   return (
@@ -21,7 +23,14 @@ export default function ProductCard({
       <div className="card-body p-4">
         <div className="text-center">
           {/* <!-- Product name--> */}
-          <h5 className="fw-bolder">{title}</h5>
+          <h5 className="fw-bolder">
+            <Link
+              to={`/products/${id}`}
+              className="text-dark text-decoration-none"
+            >
+              {title}
+            </Link>
+          </h5>
           {/* <!-- Product reviews--> */}
           <Rating rating={rating} />
           {/* <!-- Product price--> */}
