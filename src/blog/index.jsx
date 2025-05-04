@@ -15,12 +15,12 @@ export default function Blog() {
       </HeaderNav>
       <div className="container">
         <Routes>
-          <Route path="/" Component={HomeBlog} />
-          <Route path="/list" Component={AddBlog} />
-          <Route path="/add-blog" Component={AddBlog} />
-          <Route path="/login" Component={Login} />
-          {/* <Route path="*" Component={<Navigate to="/" replace />} /> */}
-          <Route path="*" Component={NotFound} />
+          <Route path="/" element={<HomeBlog />} />
+          <Route path="/list" element={<AddBlog />} />
+          <Route path="/add-blog" element={<AddBlog />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+          {/* <Route path="*" Component={NotFound} /> */}
         </Routes>
         <Outlet />
       </div>

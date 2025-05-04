@@ -29,7 +29,7 @@ export default function HeaderNav(props) {
             <li className="nav-item">
               <NavLink
                 to="/"
-                className={(isActive) =>
+                className={({ isActive }) =>
                   isActive ? "active nav-link" : "nav-link"
                 }
                 end
@@ -40,7 +40,7 @@ export default function HeaderNav(props) {
             <li className="nav-item">
               <NavLink
                 to="/list"
-                className={(isActive) =>
+                className={({ isActive }) =>
                   isActive ? "active nav-link" : "nav-link"
                 }
                 end
