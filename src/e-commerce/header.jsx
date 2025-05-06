@@ -4,7 +4,7 @@ import { AxiosInstance } from "./axios";
 
 export default function Header() {
   const [categories, setCategories] = useState([]);
-
+  const [isLogged, setIsLogged] = useState(false);
   useEffect(() => {
     // Fetch categories from the API
     const fetchCatg = async () => {
@@ -16,6 +16,10 @@ export default function Header() {
       }
     };
     fetchCatg();
+    const found = localStorage.getItem("token");
+    if (found) {
+      setIsLogged(true);
+    }
   }, []);
 
   return (
@@ -100,13 +104,22 @@ export default function Header() {
             </li>
           </ul>
           <form className="d-flex">
-            <NavLink className="btn btn-outline-dark" to="/cart">
+            <NavLink className="btn btn-outline-dark me-3" to="/cart">
               <i className="bi-cart-fill me-1"></i>
               Cart
               <span className="badge bg-dark text-white ms-1 rounded-pill">
                 0
               </span>
             </NavLink>
+            {!isLogged ? (
+              <NavLink className="btn btn-outline-dark" to="/login">
+                Login
+              </NavLink>
+            ) : (
+              <NavLink className="btn btn-outline-dark" to="/logout">
+                Logout
+              </NavLink>
+            )}
           </form>
         </div>
       </div>

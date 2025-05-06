@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { AxiosInstance } from "./axios";
+import ProductCard from "./product-card";
 
 export default function ProductDetail() {
+  const location = useLocation();
   const [product, setProduct] = useState(null);
+  const [related, setRelated] = useState(null);
   const [quantity, setQuantity] = useState(1);
-  const productId = useParams().productId;
+  const params = useParams();
+  const productId = params.productId;
+  console.log(location);
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const res = await AxiosInstance.get(`/products/${productId}`);
         setProduct(res.data);
+        const catgRes = await AxiosInstance.get(
+          `/products/category/${res.data.category}`
+        );
+        setRelated(catgRes.data.products);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
@@ -123,6 +132,16 @@ export default function ProductDetail() {
           <p>No reviews yet.</p>
         )}
       </div>
+      {related && (
+        <div className="row">
+          <h2 className="text-dark fs-4">Related Products</h2>
+          {related.slice(0, 3).map((item) => (
+            <div className="col-md-3" key={item.id}>
+              <ProductCard {...item} />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
