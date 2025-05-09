@@ -1,5 +1,5 @@
 import React from "react";
-import { replace, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const location = useLocation();

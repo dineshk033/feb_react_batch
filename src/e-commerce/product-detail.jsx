@@ -29,7 +29,7 @@ export default function ProductDetail() {
   const handleAddToCart = () => {
     alert(`Added ${quantity} of ${product.title} to cart!`);
   };
-
+  // setProduct(null);
   const handleBuyNow = () => {
     alert(`Purchased ${quantity} of ${product.title}!`);
   };

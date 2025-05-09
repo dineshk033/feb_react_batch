@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AxiosInstance } from "./axios";
+import useAuth from "./useAuth";
 
 export default function Header() {
   const [categories, setCategories] = useState([]);
-  const [isLogged, setIsLogged] = useState(false);
+  // const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useAuth();
   useEffect(() => {
     // Fetch categories from the API
     const fetchCatg = async () => {
@@ -16,12 +18,12 @@ export default function Header() {
       }
     };
     fetchCatg();
-    const found = localStorage.getItem("token");
-    if (found) {
-      setIsLogged(true);
-    }
+    // const found = localStorage.getItem("token");
+    // if (found) {
+    //   setIsLogged(true);
+    // }
   }, []);
-
+  console.log(isLogged);
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container px-4 px-lg-5">
