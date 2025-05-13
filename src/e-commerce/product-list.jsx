@@ -2,12 +2,18 @@ import React from "react";
 import { AxiosInstance } from "./axios";
 import ProductCard from "./product-card";
 import useProductFetchList from "./useProductFetchList";
+import { useDispatch } from "react-redux";
+import { add } from "./redux/cartSlice";
 
 export default function ProductList() {
+  const dispatch = useDispatch();
   // const [products, setProducts] = React.useState([]);
   const [products, loading, error] = useProductFetchList({
     url: "/products",
   });
+  const addCart = (payload) => {
+    dispatch(add(payload));
+  };
   // useEffect(() => {
   //   const fetchProducts = async () => {
   //     try {
@@ -29,7 +35,7 @@ export default function ProductList() {
     <div className="row">
       {products.map((item) => (
         <div key={item.id} className="col-lg-3 col-md-4 mb-4">
-          <ProductCard {...item} />
+          <ProductCard {...item} addCart={addCart} />
         </div>
       ))}
     </div>

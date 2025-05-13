@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { AxiosInstance } from "./axios";
 import Header from "./header";
+import { useSelector } from "react-redux";
 
 const CartComponent = () => {
   const [carts, setCarts] = React.useState([]);
-
+  const cartList = useSelector((state) => state.cart);
+  console.log(cartList);
   const fetchCarts = async () => {
     try {
       const res = await AxiosInstance.get("/carts/user/6");

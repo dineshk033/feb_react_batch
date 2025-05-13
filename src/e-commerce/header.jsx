@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AxiosInstance } from "./axios";
 import { useAuth } from "./context/auth-context";
+import { useSelector } from "react-redux";
 
 export default function Header() {
   const [categories, setCategories] = useState([]);
   const { token } = useAuth();
+  const cartLength = useSelector((state) => state.cart.length);
   console.log(token);
   // const [isLogged, setIsLogged] = useState(false);
   // const [isLogged, setIsLogged] = useAuth();
@@ -112,7 +114,7 @@ export default function Header() {
               <i className="bi-cart-fill me-1"></i>
               Cart
               <span className="badge bg-dark text-white ms-1 rounded-pill">
-                0
+                {cartLength}
               </span>
             </NavLink>
             {!token ? (

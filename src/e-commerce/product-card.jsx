@@ -9,6 +9,7 @@ export default function ProductCard({
   rating,
   id,
   thumbnail,
+  addCart,
 }) {
   return (
     <div className="card h-100">
@@ -45,9 +46,21 @@ export default function ProductCard({
       {/* <!-- Product actions--> */}
       <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
         <div className="text-center">
-          <a className="btn btn-outline-dark mt-auto" href="#">
+          <button
+            className="btn btn-outline-dark mt-auto"
+            onClick={() =>
+              addCart({
+                title,
+                price,
+                discountPercentage,
+                rating,
+                id,
+                thumbnail,
+              })
+            }
+          >
             Add to cart
-          </a>
+          </button>
         </div>
       </div>
     </div>
