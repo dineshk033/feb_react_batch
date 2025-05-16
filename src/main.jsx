@@ -11,7 +11,7 @@ import Ecommerce from "./e-commerce/index.jsx";
 
 const App = () => (
   <BrowserRouter>
-    <Ecommerce />
+    <Blog />
   </BrowserRouter>
 );
 createRoot(document.getElementById("root")).render(<App />);

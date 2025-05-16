@@ -11,7 +11,7 @@ export default function Blog() {
   return (
     <>
       <HeaderNav>
-        <div className="text-primary">Blogger</div>
+        <div className="text-primary">Blogger App</div>
       </HeaderNav>
       <div className="container">
         <Routes>
